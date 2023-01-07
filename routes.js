@@ -2,7 +2,6 @@ function getRoot(req, res) {
     res.send('Bienvenido');
 }
 
-// .isAuthenticated es un metodo de passport - si el usuario esta logueado lo re direccionamos a vista login-ok, de lo contrario lo re direccionamos a login.html
 function getLogin(req, res) {
     if (req.isAuthenticated()) {
 
