@@ -1,19 +1,17 @@
 
-const ProductosDaoMongo = require=('./productos/ProductosDaoMongoDb')
-const CarritosDaoMongo = require=('./carritos/CarritosDaoMongo')
-
 let carritosDao
 let productosDao
 
-process.env.PERS = 'firebase'
-
 switch (process.env.PERS) {
+    
     case 'mongodb':
-        productosDao = new ProductosDaoMongo()
-        carritosDao = new CarritosDaoMongo()
-        break    
+        const { default: ProductosDaoMongoDb } = require('./productos/ProductosDaoMongoDb.js')
+        const { default: CarritosDaoMongoDb } =  require('./carritos/CarritosDaoMongoDb.js')
+
+        productosDao = new ProductosDaoMongoDb()
+        carritosDao = new CarritosDaoMongoDb()
+        break
+    
 }
 
-// export { productosDao, carritosDao }
-
-module.exports ={productosDao,carritosDao}
+module.exports={ productosDao, carritosDao }

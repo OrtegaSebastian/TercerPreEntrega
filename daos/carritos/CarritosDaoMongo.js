@@ -1,4 +1,4 @@
-const contenedorCarritoMongo= require('../../contenedores/mongoContain') 
+const {contenedorCarritoMongo}= require('../../contenedores/mongoContain') 
 
 
 class DAOcarroMongo extends contenedorCarritoMongo{
@@ -15,6 +15,4 @@ class DAOcarroMongo extends contenedorCarritoMongo{
     }
 
 }
-
-// export default DAOcarroMongo
 module.exports={DAOcarroMongo}

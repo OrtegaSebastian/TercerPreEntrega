@@ -3,7 +3,7 @@
 
 const esAdmin = true
 
-export function crearErrorNoEsAdmin(ruta, metodo) {
+function crearErrorNoEsAdmin(ruta, metodo) {
     const error = {
         error: -1,
     }
@@ -15,10 +15,13 @@ export function crearErrorNoEsAdmin(ruta, metodo) {
     return error
 }
 
-export function soloAdmins(req, res, next) {
+ function soloAdmins(req, res, next) {
     if (!esAdmin) {
         res.json(crearErrorNoEsAdmin())
     } else {
         next()
     }
 }
+
+module.exports={crearErrorNoEsAdmin,soloAdmins}
+

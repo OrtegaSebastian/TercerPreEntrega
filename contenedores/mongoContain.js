@@ -1,7 +1,8 @@
-const Config = require('../src/config')
-const mongoose = require('mongoose')
+// const Config = require('../src/config')
 
-await mongoose.connect(Config.mongoDB.cnxStr, Config.mongoDB.options)
+// const mongoose = require('mongoose')
+
+// mongoose.connect(Config.mongoDB.cnxStr, Config.mongoDB.options)
 
 class contenedorCarritoMongo {
     // * get, post, put, delete

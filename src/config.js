@@ -4,7 +4,7 @@ const Config={
         path: './DB'
     },
     mongoDB:{
-        cnxStr: 'mongodb://localhost/ecommerce',
+        cnxStr: "mongodb://localhost/ecommerce",
         options: {
             useNewUrlParser: true,
             useUnifiedTopology: true,

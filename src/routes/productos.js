@@ -1,15 +1,15 @@
 const Router = require('express')
 
-const productosDao = require('../../daos/index')
+const {productosDao} = require('../../daos/index')
 
-const soloAdmins = require('../middleware/admin')
+const {soloAdmins} = require('../middleware/admin')
 
 // configuro router de productos
 
 const productosRouter = new Router()
 
 productosRouter.get('/', async (req, res) => {
-    console.log('GET /productos')
+    // console.log('GET /productos')
     const productos = await productosDao.getAllProducts()
     res.json(productos)
 })
@@ -30,6 +30,7 @@ productosRouter.delete('/:id', soloAdmins, async (req, res) => {
     res.json(await productosDao.borrar(req.params.id))
 })
 
-// export default productosRouter
 
-module.exports ={productosRouter}
+
+module.exports= {productosRouter}
+

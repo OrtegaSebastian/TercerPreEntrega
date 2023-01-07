@@ -1,6 +1,18 @@
 
-const routerCarritos= require('./src/routes/carritos')
-const routerProductos = require('./src/routes/productos') 
+
+
+//express
+const express = require('express');
+const app = express();
+const bCrypt = require('bcrypt')
+const session = require('express-session');
+const port = 8080;
+
+/////////////////////////////////////////
+
+
+// const routerCarritos = require('./src/routes/carritos')
+// const routerProductos = require('./src/routes/productos') 
 
 
 // configuro el servidor
@@ -9,29 +21,18 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 
-app.use('/api/productos', routerProductos)
-app.use('/api/carritos', routerCarritos)
+// app.use('/api/productos', routerProductos)
+// app.use('/api/carritos', routerCarritos)
 
 
 const dotenv = require('dotenv') 
 
 dotenv.config('./src/.env')
 
+//////////////////////////////////
 
 
 
-const probando = require('./src/')
-
-
-
-//codigo ok el de abajo , lo de arriba son partes de otro 
-
-//express
-const express = require('express');
-const app = express();
-const bCrypt = require('bcrypt')
-const session = require('express-session');
-const port = 8080;
 
 //hbs
 const exphbs = require('express-handlebars');
