@@ -1,3 +1,70 @@
+//nodemailer aun no lo pruebo
+
+const {createTransport}= require('nodemailer')
+//ACA DEBO PONER  EL CORREO creado de prueba en ehereal
+const TEST_MAIL='xxxxxx@ethereal.email'
+
+const transporter = createTransport({
+    host:'smtp.ethereal.email',
+    port:587,
+    auth:{
+        user: TEST_MAIL,
+        pass:'Backend'
+    }
+})
+
+const mailOptions = {
+    from:'Servidor Registro',
+    to:TEST_MAIL,
+    subject:'Nuevo Registro',
+    html: '<h3>Se ha registrado un nuevo usuario en la base de datos</h3>'
+}
+try{const info = await transporter.sendMail(mailOptions)
+    console.log(info)
+}
+catch(e){console.log(e)}
+
+//mensaje de texto para el usuario desde twilio
+//agregar al .env las credenciales IMPORTANTE
+
+import twilio from "twilio";
+import * as dotenv from "dotenv";
+dotenv.config();
+
+const accountSID = "AC98115544aec1da2a919cf82b6c466f28";
+const authToken = process.env.TWILIO;
+
+const client = twilio(accountSID, authToken);
+const palabra = "codigo"
+
+//Como envio la lista de productos ? 
+try {
+  const msg = await client.messages.create({
+    body: "Gracias por su compra",
+    from: "whatsapp:+14155238886",
+    to:`whatsapp:`+ process.env.PHONE,
+  });
+} catch (e) {
+   console.log(e)
+  console.log("error");
+}
+
+
+
+
+const accountSid= ''
+const accountToken= ''
+const cliente = twilio(accountSid,accountToken)
+
+try{const message = await cliente.messages.create({
+    body:'Su Pedido ha sido recibido y se encuentra en proceso',
+    //agregar numero de twilio //IMPORTANTE
+    from:'',
+    //ver como requerir numero de usuario
+    to:req.params
+})
+console.log(message)
+}catch(e){console.log(e)}
 
 
 
