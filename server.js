@@ -11,8 +11,8 @@ const port = 8080;
 /////////////////////////////////////////
 
 
-// const routerCarritos = require('./src/routes/carritos')
-// const routerProductos = require('./src/routes/productos') 
+const routerCarritos = require('./src/routes/carritos')
+const routerProductos = require('./src/routes/productos') 
 
 
 // configuro el servidor
@@ -21,8 +21,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 
-// app.use('/api/productos', routerProductos)
-// app.use('/api/carritos', routerCarritos)
+app.use('/api/productos', routerProductos)
+app.use('/api/carritos', routerCarritos)
 
 
 const dotenv = require('dotenv') 
@@ -51,10 +51,14 @@ const controllersdb = require('./controllersdb')
 const routes = require('./routes');
 
 // Configuracion de las vistas
-app.engine('.hbs', exphbs.engine({ extname: '.hbs', defaultLayout: 'main.hbs' }));
+app.engine('.hbs', exphbs.engine({ extname: '.hbs',
+    defaultLayout: 'main' }));
 app.set('view engine', '.hbs');
 app.use(express.urlencoded({extended: true}))
 app.use(express.static(__dirname + '/views'));
+
+
+
 
 
 //session
