@@ -82,4 +82,4 @@ class ContenedorArchivo {
     }
 }
 
-module.exports = ContenedorArchivo;
+module.exports = {ContenedorArchivo};

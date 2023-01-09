@@ -2,7 +2,7 @@ let carritosDao;
 let productosDao;
 // TODO: PERS no es mongodb, por lo tanto no regresa nada
 switch (process.env.PERS) {
-  case "mongodb":
+  case "mongoDB":
   // TODO: agregue default como fallback, revisar el uso de env
   default:
     // TODO: en commonjs no hace falta utilizar el default, solo en es6
