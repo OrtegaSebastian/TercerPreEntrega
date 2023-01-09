@@ -1,33 +1,21 @@
-const {contenedorProductosMongo} = require('../../contenedores/mongoContain')
+const { contenedorProductosMongo } = require("../../contenedores/mongoContain");
 
-
-
-class DAOProdMongo extends contenedorProductosMongo{
-    constructor(){
-        // *super = padre/mongoProducto
-        super("collectionProducto",{
-            id:{type:string, require:true},
-            nombre:{type:string, require:true},
-            descripcion:{type:number, require:true},
-            codigo:{type:string, require:true},
-            foto:{type:string, require:true},
-            precio:{type:number, require:true},
-            stock:{type:number, require:true},
-            timestamp:true,
-        }) 
-    }
+class DAOProdMongo extends contenedorProductosMongo {
+  constructor() {
+    // *super = padre/mongoProducto
+    super("collectionProducto", {
+      id: { type: String, require: true },
+      nombre: { type: String, require: true },
+      descripcion: { type: Number, require: true },
+      codigo: { type: String, require: true },
+      foto: { type: String, require: true },
+      precio: { type: Number, require: true },
+      stock: { type: Number, require: true },
+      // TODO: revisar mongoose doc, para cambiar el timestamp
+      //   TODO: timestamp: true,
+    });
+  }
 }
 
-// export default DAOProdMongo
 
-module.exports={DAOProdMongo}
-
-
-
-
-
-
-
-
-
-
+module.exports = DAOProdMongo;

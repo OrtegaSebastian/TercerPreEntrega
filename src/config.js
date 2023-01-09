@@ -1,15 +1,15 @@
-
-const Config={
-    fileSystem: {
-        path: './DB'
+const Config = {
+  fileSystem: {
+    path: "./DB",
+  },
+  mongoDB: {
+    cnxStr: "mongodb://127.0.0.1/ecommerce",
+    options: {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 5000,
     },
-    mongoDB:{
-        cnxStr: "mongodb://localhost/ecommerce",
-        options: {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            serverSelectionTimeoutMS: 5000,
-        }
-    }
-}
-module.exports ={Config}
+  },
+};
+// TODO: exportat solo el config
+module.exports = Config;

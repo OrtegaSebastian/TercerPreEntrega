@@ -23,11 +23,9 @@
     "firebase-admin": "^11.4.1",
     "mongodb": "^4.13.0",
     "mongoose": "^6.7.5",
-    "nodemailer": "^6.8.0",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
-    "path": "^0.12.7",
-    "twilio": "^3.84.0"
+    "path": "^0.12.7"
   },
   "repository": {
     "type": "git",
@@ -36,5 +34,8 @@
   "bugs": {
     "url": "https://github.com/OrtegaSebastian/TercerPreEntrega/issues"
   },
-  "homepage": "https://github.com/OrtegaSebastian/TercerPreEntrega#readme"
+  "homepage": "https://github.com/OrtegaSebastian/TercerPreEntrega#readme",
+  "devDependencies": {
+    "@types/express-handlebars": "^6.0.0"
+  }
 }

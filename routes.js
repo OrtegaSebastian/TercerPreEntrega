@@ -8,8 +8,11 @@ function getLogin(req, res) {
         var user = req.user;
         res.render('login-ok', {
             usuario: user.username,
+            password:user.password,
             nombre: user.firstName,
-            apellido: user.lastName,
+            age:user.age,  
+            apellido: user.lastName,        
+            avatar:user.uploaded_file,            
             email: user.email
         });
     }
