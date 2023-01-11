@@ -52,9 +52,15 @@ app.use(express.static(__dirname + "/views"));
 
 //session
 app.use(cookieParser("my secret"));
+const MongoStore = require('connect-mongo')
 
 app.use(
   session({
+    store: MongoStore.create({
+      mongoUrl:"mongodb://127.0.0.1:27017/sesiones",
+      // mongoUrl:"mongodb+srv://sebasindahouse:Mosi0310@cluster0.epscnqt.mongodb.net/sesiones",
+      ttl:10,
+    }),
     secret: "my secret",
     resave: true,
     saveUninitialized: true,

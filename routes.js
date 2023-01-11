@@ -110,6 +110,8 @@ function postSignup(req, res) {
 }
 
 function getFailLogin(req, res) {
+    const user = req.user
+    console.log(user)
     console.log('error en login');
     res.render('login-error', {
     });
